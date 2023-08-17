@@ -1,10 +1,14 @@
 import { RouteObject } from 'react-router-dom';
-import Home from '../pages/Home';
+import { lazy } from 'react';
 
-const routers: Array<RouteObject> = [
+const routers: RouteObject[] = [
   {
     path: '/',
-    element: <Home/>,
+    Component: lazy(() => import('../pages/Home')),
+  },
+  {
+    path: '/header',
+    Component: lazy(() => import('../pages/Header')),
   },
 ];
 
